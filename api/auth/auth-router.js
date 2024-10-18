@@ -14,6 +14,11 @@ router.post("/register", validateRoleName, (req, res, next) => {
       "role_name": "angel"
     }
    */
+  try {
+    res.json('registering user');
+  } catch(err) {
+    next(err);
+  }
 });
 
 
@@ -37,6 +42,11 @@ router.post("/login", checkUsernameExists, (req, res, next) => {
       "role_name": "admin" // the role of the authenticated user
     }
    */
+  try {
+    res.json('logging in');
+  } catch(err) {
+    next(err);
+  }
 });
 
 module.exports = router;
